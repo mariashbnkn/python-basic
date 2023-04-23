@@ -28,6 +28,10 @@ def is_prime(number):
             return True
 
 
+# def odd(number):
+#     return number % 2 != 0
+
+
 def filter_numbers(numbers_list, filter_type):
     """
     функция, которая на вход принимает список из целых чисел,
@@ -35,8 +39,15 @@ def filter_numbers(numbers_list, filter_type):
     (выбор производится передачей дополнительного аргумента)
     """
     if filter_type == ODD:
-        return [number for number in numbers_list if number % 2 != 0]
+        # odd_number = filter(odd, numbers_list)
+        odd_number = filter(lambda number: number % 2 != 0, numbers_list)
+        # return [number for number in numbers_list if number % 2 != 0]
+        return list(odd_number)
     if filter_type == EVEN:
         return [number for number in numbers_list if number % 2 != 1]
     if filter_type == PRIME:
         return [number for number in numbers_list if is_prime(number) == True]
+
+
+# p1 = odd(4)
+# print(p1)
