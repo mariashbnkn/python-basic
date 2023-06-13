@@ -1,0 +1,16 @@
+<!--приветственная страница -->
+{% extends 'base.html' %}
+
+{% block title %}
+  Index page
+{% endblock %}
+
+{% block body %}
+  <p class="h4 p-2 text-secondary text-opacity-75">Index page</p>
+  <ul class="list-group">
+    <li class="list-group-item">
+      <a class="btn btn-link w-100 h-100 p-0 text-start text-decoration-none text-danger text-opacity-75"
+              href="{{ url_for('about') }}">About</a>
+    </li>
+  </ul>
+{% endblock %}
