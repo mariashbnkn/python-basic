@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Zodiacs list
+{% endblock %}
+
+{% from 'macros/show-flashed-messages.html' import show_flashed_messages_with_categories %}
+
+{% block body %}
+  <h2>Zodiacs list</h2>
+
+
+<div class="container text-center">
+
+        {{ show_flashed_messages_with_categories() }}
+  {% if zodiacs %}
+
+  <div class="row">
+  <div class="col">
+    <h3>Name:</h3>
+    <ul class="list-group">
+      {% for zodiac in zodiacs %}
+        <li class="list-group-item">
+          <a class="btn btn-link w-100 h-100 p-0 text-start text-decoration-none"
+             href="{{ url_for('zodiacs_app.details', zodiac_id=zodiac.id) }}">
+            {{ zodiac.name }}
+          </a>
+        </li>
+      {% endfor %}
+      </div>
+
+    <div class="col">
+    <h3>Date:</h3>
+    <ul class="list-group">
+      {% for zodiac in zodiacs %}
+        <li class="list-group-item">
+          <a class="btn btn-link w-100 h-100 p-0 text-start text-decoration-none"
+             href="{{ url_for('zodiacs_app.details', zodiac_id=zodiac.id) }}">
+            {{ zodiac.date_bth }}
+          </a>
+        </li>
+      {% endfor %}
+      </div>
+
+    <div class="col">
+    <h3>Zodiac:</h3>
+    <ul class="list-group">
+      {% for zodiac in zodiacs %}
+        <li class="list-group-item">
+          <a class="btn btn-link w-100 h-100 p-0 text-start text-decoration-none"
+             href="{{ url_for('zodiacs_app.details', zodiac_id=zodiac.id) }}">
+            {{ zodiac.zodiac_name }}
+          </a>
+        </li>
+      {% endfor %}
+      </div>
+
+
+
+    </ul>
+  {% else %}
+    <h3>No zodiacs yet.</h3>
+
+  {% endif %}
+    </div>
+
+  </div>
+</div>
+
+  <div class="my-3">
+    <a
+      class="no-underline"
+      href="{{ url_for('zodiacs_app.add') }}">Add new</a>
+  </div>
+
+{% endblock %}

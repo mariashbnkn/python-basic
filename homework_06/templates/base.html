@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Title{% endblock %}</title>
+
+<!--    чтобы выгрузить bootstrap и его потом применять-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+
+<!--    чтобы докинуть доп стили тэги-->
+      {% block head %}
+
+      {% endblock %}
+  </head>
+
+
+
+  <body>
+<!--  class из bootstrap для отступов-->
+  <div class="container">
+    <nav class="navbar navbar-expand-sm bg-body-tertiary my-1">
+  <div class="container-fluid">
+<!--    нажав на app - попадем на корень сайта -->
+    <a class="navbar-brand" href="/">App</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+
+<!--        описывает кнопки и ссылки на них в цикле -->
+        {% for endpoint, label in [
+          ('zodiacs_app.list', 'Zodiacs'),
+        ] %}
+
+        {% set path = url_for(endpoint) %}
+<!--активная неактивная ссылка -->
+        <li class="nav-item">
+          <a
+                  class="nav-link
+                  {% if endpoint == request.endpoint %}
+                    active
+                  {% endif %}
+                  "
+                  href="{{ url_for(endpoint) }}">{{ label }}
+          </a>
+        </li>
+
+        {% endfor %}
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{{ url_for('zodiacs_app.add')}}">Add new</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  {% block body %}
+    Base body
+  {% endblock %}
+  </div>
+  <br>
+<!--отступы-->
+<div class="mt-md-3">
+  &copy; OTUS 2023
+</div>
+<!--  чтобы панель шла вниз нужно подключить js-->
+  <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js')}}"> </script>
+  </body>
+</html>

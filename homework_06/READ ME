@@ -1,0 +1,37 @@
+docker network prune - remove all unused images
+
+# build app
+docker build . -t app
+
+# build app in docker
+docker compose build app
+
+# push app
+docker compose up app
+
+# need push db
+depends_on in "docker-compose.yaml"
+
+# если миграции не на нашем сервере
+file ./prestart.sh
+
+# for exact start psql. for a guarantee
+docker-compose healthcheck
+
+# start production deployment
+use tiangolo/uwsgi-nginx-flask:python3.11
+
+# vps for site
+for start:
+docker compose up -d app
+
+# last actions
+docker compose exec -it app-dev bash
+
+# show string
+head -19 templates/index.html | tail -1
+
+# volumes ???
+
+
+

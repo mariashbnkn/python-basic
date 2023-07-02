@@ -1,0 +1,31 @@
+<!--приветственная страница -->
+{% extends 'base.html' %}
+
+{% block title %}
+  HELLO Index page
+{% endblock %}
+
+{% block head %}
+  <style>
+    /* CSS - cascade style sheets */
+    /*
+    html {
+      font-size: 22pt;
+    }
+     */
+  </style>
+{% endblock %}
+
+{% block body %}
+  <p class="h2">Hello ;)</p>
+
+
+
+  <p class="h3">Links:</p>
+  <ul>
+    <li>
+      <a href="{{ url_for('zodiacs_app.list') }}">Zodiacs</a>
+    </li>
+
+  </ul>
+{% endblock %}

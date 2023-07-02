@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "first_date": 321,
+    "last_date": 420,
+    "name": "Aries"
+  },
+  {
+    "id": 2,
+    "first_date": 421,
+    "last_date": 521,
+    "name": "Taurus"
+  },
+  {
+    "id": 3,
+    "first_date": 522,
+    "last_date": 621,
+    "name": "Gemini"
+  },
+  {
+    "id": 4,
+    "first_date": 622,
+    "last_date": 722,
+    "name": "Cancer"
+  },
+  {
+    "id": 5,
+    "first_date": 723,
+    "last_date": 821,
+    "name": "Leo"
+  },
+  {
+    "id": 6,
+    "first_date": 822,
+    "last_date": 923,
+    "name": "Virgo"
+  },
+  {
+    "id": 7,
+    "first_date": 924,
+    "last_date": 1023,
+    "name": "Libra"
+  },
+  {
+    "id": 8,
+    "first_date": 1024,
+    "last_date": 1122,
+    "name": "Scorpio"
+  },
+  {
+    "id": 9,
+    "first_date": 1123,
+    "last_date": 1222,
+    "name": "Sagittarius"
+  },
+  {
+    "id": 10,
+    "first_date": 1223,
+    "last_date": 1231,
+    "name": "Capricorn"
+  },
+  {
+    "id": 13,
+    "first_date": 100,
+    "last_date": 120,
+    "name": "Capricorn"
+  },
+  {
+    "id": 11,
+    "first_date": 121,
+    "last_date": 219,
+    "name": "Aquarius"
+  },
+  {
+    "id": 12,
+    "first_date": 220,
+    "last_date": 320,
+    "name": "Pisces"
+  }
+]
