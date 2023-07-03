@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "sales-shop"
+version = "0.1.0"
+description = ""
+authors = ["maria <xxmarrria@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Django = "4.2.2"
+django-debug-toolbar = "^4.1.0"
+
+[tool.poetry.group.dev.dependencies]
+django-debug-toolbar = "^4.1.0"

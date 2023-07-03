@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Categories tree
+{% endblock %}
+
+{% block body %}
+
+  <h1>Categories</h1>
+  <ul>
+    {% for zodiac_base in zodiacs_base %}
+      <li>
+        {{ zodiac_base.name }}
+        <ul>
+          {% for zodiac in zodiac_name.zodiacs.all %}
+            <li>
+              <code>${{ zodiac.name }}</code>
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

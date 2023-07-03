@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Astrology Index
+{% endblock %}
+
+{% block body %}
+  <div>
+    <h1>Astrology</h1>
+    <h3>Zodiacs</h3>
+    <ul>
+      {% for zodiac in zodiacs %}
+        <li>
+          <code>{{ zodiac.name }}</code>
+          [{{ zodiac.date_bth }}]
+          -
+          {{ zodiac.zodiac_name.name }}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}
